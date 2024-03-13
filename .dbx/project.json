@@ -1,0 +1,15 @@
+{
+    "environments": {
+        "default": {
+            "profile": "azure-gov",
+            "storage_type": "mlflow",
+            "properties": {
+                "workspace_directory": "/Shared/dbx/projects/usda_cicd_dbx",
+                "artifact_location": "dbfs:/dbx/usda_cicd_dbx"
+            }
+        }
+    },
+    "inplace_jinja_support": false,
+    "failsafe_cluster_reuse_with_assets": false,
+    "context_based_upload_for_execute": false
+}
