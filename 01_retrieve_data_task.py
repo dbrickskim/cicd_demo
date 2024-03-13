@@ -1,7 +1,4 @@
 # Databricks notebook source
-# import sys, os
-# sys.path.append(os.path.abspath('/Workspace/Repos/donghwa.kim@databricks.com/cicd_demo'))
-
 import sys
 sys.path.append("/Workspace/Repos/donghwa.kim@databricks.com/cicd_demo/")
 
