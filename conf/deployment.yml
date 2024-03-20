@@ -4,5 +4,6 @@ environments:
   default:
     workflows:
       - name: "dbx-demo-job"
+        existing_cluster_id: 0312-204608-nvch020c
         spark_python_task:
           python_file: "file://01_retrieve_data_task.py"
