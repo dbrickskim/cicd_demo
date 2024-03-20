@@ -102,7 +102,7 @@ jobs:
         id: deploy_dbx
         uses: ./actions/.github/actions/deploy_dbx
         with:
-          workspace-dir: ${{ format('/Shared/{0}', env.PROJECT_NAME) }}
-          artifact-location: ${{ format('dbfs:/Shared/{0}', env.PROJECT_NAME) }}
+          workspace-dir: ${{ format('/Shared/dbx/projects/{0}', env.PROJECT_NAME) }}
+          artifact-location: ${{ format('dbfs:/dbx/{0}', env.PROJECT_NAME) }}
           deployment-file: ${{ inputs.deployment-file}}
           run-job-now: ${{ inputs.run-job-now}}
