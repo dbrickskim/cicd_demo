@@ -5,4 +5,4 @@ environments:
     workflows:
       - name: "dbx-demo-job"
         spark_python_task:
-          python_file: "file://dbx-demo-job.py"
+          python_file: "file://01_retrieve_data_task.py"
