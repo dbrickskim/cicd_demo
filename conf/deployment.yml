@@ -1,7 +1,7 @@
 build:
   no_build: true
 environments:
-  azure-gov:
+  default:
     workflows:
       - name: "dbx-demo-job"
         spark_python_task:
