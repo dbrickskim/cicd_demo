@@ -11,10 +11,10 @@ on:
         description: "if yes, runs dbr job now"
         default: "yes"
         type: string
-      toolkit-ref:
-        required: true
-        description: "actions version to use"
-        type: string
+      # toolkit-ref:
+      #   required: true
+      #   description: "actions version to use"
+      #   type: string
 
     outputs:
       job_id:
@@ -35,10 +35,10 @@ on:
         description: "if yes, runs dbr job now"
         default: "yes"
         type: string
-      toolkit-ref:
-        required: true
-        description: "actions version to use"
-        type: string
+      # toolkit-ref:
+      #   required: true
+      #   description: "actions version to use"
+      #   type: string
 
     outputs:
       job_id:

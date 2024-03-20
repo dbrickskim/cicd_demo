@@ -57,7 +57,7 @@ runs:
       shell: bash
       working-directory: ./project
       run: |
-        job_name=$(yq eval '.environments.default.workflows[0].name' "${{ inputs.deployment-file }}")
+        job_name=$(yq eval '.environments.default.workflows[0].name' "${{ inputs.deployment-file }}")        
         echo $job_name
         echo "job_name=$job_name" >> $GITHUB_OUTPUT
 
