@@ -63,15 +63,6 @@ runs:
         echo $job_name
         echo "job_name=$job_name" >> $GITHUB_OUTPUT
 
-    # - name: dbx deploy
-    #   id: dbx_deploy
-    #   shell: bash
-    #   working-directory: ./project
-    #   run: |
-    #     dbx deploy --deployment-file="${{ inputs.deployment-file }}"
-    #     if [[ "${{ inputs.run-job-now }}" == "yes" || "${{ inputs.run-job-now }}" == "True" ]]; \
-    #     then (dbx launch --job ${{ steps.get_job_name.outputs.job_name }}); fi
-
     - name: dbx deploy
       id: dbx_deploy
       shell: bash

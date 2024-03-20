@@ -2,26 +2,6 @@ name: "Project deployment"
 on:
   push:
 
-  # workflow_call:
-  #   inputs:
-  #     deployment-file:
-  #       required: true
-  #       description: "dbx deployment file"
-  #       type: string
-  #     run-job-now:
-  #       required: false
-  #       description: "if yes, runs dbr job now"
-  #       default: "yes"
-  #       type: string
-
-  #   outputs:
-  #     job_id:
-  #       description: Databricks job id
-  #       value: ${{ jobs.deploy_databricks.outputs.job_id }}
-  #     run_id:
-  #       description: Databricks run id
-  #       value: ${{ jobs.deploy_databricks.outputs.run_id }}
-
   workflow_dispatch:
     inputs:
       deployment-file:
