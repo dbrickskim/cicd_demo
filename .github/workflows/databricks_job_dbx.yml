@@ -1,37 +1,26 @@
 name: "Project deployment"
 on:
   push:
-    inputs:
-      deployment-file:
-        required: true
-        description: "dbx deployment file"
-        default: "conf/deployment.yml"
-        type: string
-      run-job-now:
-        required: false
-        description: "if yes, runs dbr job now"
-        default: "yes"
-        type: string
 
-  workflow_call:
-    inputs:
-      deployment-file:
-        required: true
-        description: "dbx deployment file"
-        type: string
-      run-job-now:
-        required: false
-        description: "if yes, runs dbr job now"
-        default: "yes"
-        type: string
+  # workflow_call:
+  #   inputs:
+  #     deployment-file:
+  #       required: true
+  #       description: "dbx deployment file"
+  #       type: string
+  #     run-job-now:
+  #       required: false
+  #       description: "if yes, runs dbr job now"
+  #       default: "yes"
+  #       type: string
 
-    outputs:
-      job_id:
-        description: Databricks job id
-        value: ${{ jobs.deploy_databricks.outputs.job_id }}
-      run_id:
-        description: Databricks run id
-        value: ${{ jobs.deploy_databricks.outputs.run_id }}
+  #   outputs:
+  #     job_id:
+  #       description: Databricks job id
+  #       value: ${{ jobs.deploy_databricks.outputs.job_id }}
+  #     run_id:
+  #       description: Databricks run id
+  #       value: ${{ jobs.deploy_databricks.outputs.run_id }}
 
   workflow_dispatch:
     inputs:
@@ -58,8 +47,6 @@ jobs:
         run: |
           echo "Branch that was used to start the workflow: ${{ github.ref_name }}"
           echo "Github workflow started running: $(date +'%Y-%m-%d %H:%M:%S')"
-          echo "Deployment file: ${{ inputs.deployment-file }}"
-          echo "Run job now?: ${{ inputs.run-job-now }}"
 
       - name: Get composite run steps repository
         id: checkout_demo_code
@@ -80,5 +67,5 @@ jobs:
         with:
           workspace-dir: ${{ format('/Shared/dbx/projects/{0}', env.PROJECT_NAME) }}
           artifact-location: ${{ format('dbfs:/dbx/{0}', env.PROJECT_NAME) }}
-          deployment-file: ${{ inputs.deployment-file}}
-          run-job-now: ${{ inputs.run-job-now}}
+          deployment-file: conf/deployment.yml
+          run-job-now: yes
