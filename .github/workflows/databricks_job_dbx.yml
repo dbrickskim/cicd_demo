@@ -40,13 +40,13 @@ on:
       #   description: "actions version to use"
       #   type: string
 
-    outputs:
-      job_id:
-        description: Databricks job id
-        value: ${{ jobs.deploy_databricks.outputs.job_id }}
-      run_id:
-        description: Databricks run id
-        value: ${{ jobs.deploy_databricks.outputs.run_id }}
+    # outputs:
+    #   job_id:
+    #     description: Databricks job id
+    #     value: ${{ jobs.deploy_databricks.outputs.job_id }}
+    #   run_id:
+    #     description: Databricks run id
+    #     value: ${{ jobs.deploy_databricks.outputs.run_id }}
 
 jobs:
   deploy_databricks:
