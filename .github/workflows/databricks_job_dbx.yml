@@ -85,6 +85,12 @@ jobs:
       #     token: ${{ steps.generate_token.outputs.token }}
       #     path: actions
 
+      - name: Get composite run steps repository
+        id: checkout_demo_code
+        uses: actions/checkout@v3
+        with:
+          path: actions
+
       - name: Setup env vars
         id: setup_env_vars
         uses: ./actions/.github/actions/setup_env_vars
